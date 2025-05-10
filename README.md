@@ -1,3 +1,3 @@
 # BITSHackathon
 
-Lets see how this shit goes
+Idea: Community-Based Incident Detection and Verification (Powered by AI, of course, lol)
