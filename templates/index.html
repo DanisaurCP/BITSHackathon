@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Incident Detector</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h1>Satellite-Based Smoke/Fire Detection</h1>
+    <img src="/static/detected.png" alt="Detected Image" width="500">
+
+    <h2>Do you see smoke/fire in your area?</h2>
+    <button onclick="submitReport()">Yes, I confirm</button>
+
+    <p id="statusText"></p>
+
+    <script>
+        function submitReport() {
+            fetch('/report', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ user: 'anonymous', confirmed: true, timestamp: Date.now() })
+            })
+            .then(response => response.json())
+            .then(data => {
+                getStatus();
+            });
+        }
+
+        function getStatus() {
+            fetch('/status')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("statusText").innerText = `Status: ${data.status} (Reports: ${data.report_count})`;
+            });
+        }
+
+        window.onload = getStatus;
+    </script>
+</body>
+</html>
