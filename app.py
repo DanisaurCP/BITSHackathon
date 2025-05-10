@@ -66,7 +66,7 @@ def status():
         reports = json.load(f)
     count = len(reports)
     status = "Unconfirmed"
-    if count >= 3:
+    if count >= 2:
         status = "Likely Incident"
     return jsonify({'status': status, 'report_count': count})
 

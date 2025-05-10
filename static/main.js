@@ -84,18 +84,20 @@ function updateMap() {
 
             reports.forEach(r => {
                 let iconColor = 'gray';
-                if (r.confirmations >= 3 && r.confirmations < 6) 
-                    iconColor = 'orange';
+                if (r.confirmations >= 2 && r.confirmations < 6) 
+                    iconColor = 'yellow';
                 else if (r.confirmations >= 6) 
                     iconColor = 'red';
+                
                 const customIcon = L.icon({
-                    iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${iconColor}.png`,
-                    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-                    iconSize: [25, 41],
+                    iconUrl: `/static/icons/${iconColor}.png`,
+                    iconSize: [32.8, 41],
                     iconAnchor: [12, 41],
-                    popupAnchor: [1, -34],
-                    shadowSize: [41, 41]
+                    popupAnchor: [1, -34]
+                    
                 });
+                
+                
                 const marker = L.marker([r.lat, r.lon], { icon: customIcon }).addTo(map);
 
                 const popupContent = `
