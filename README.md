@@ -1,3 +1,3 @@
 # BITSHackathon
 
-# Lets see how this shit goes
+Lets see how this shit goes
