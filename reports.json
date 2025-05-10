@@ -1,192 +1,37 @@
 [
   {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860296840
+    "lat": 25.122123914056008,
+    "lon": 55.35328388214111,
+    "timestamp": 1746861837258
   },
   {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860299032
+    "lat": 25.12204620250252,
+    "lon": 55.35276889801026,
+    "timestamp": 1746861842458
   },
   {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860299304
+    "lat": 25.128015277290938,
+    "lon": 55.38534164428712,
+    "timestamp": 1746861859913
   },
   {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860299523
+    "lat": 25.155986874585434,
+    "lon": 55.37332534790039,
+    "timestamp": 1746861864049
   },
   {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860299799
+    "lat": 25.14619754458319,
+    "lon": 55.427570343017585,
+    "timestamp": 1746861866400
   },
   {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860300011
+    "lat": 25.113560774972626,
+    "lon": 55.41692733764649,
+    "timestamp": 1746861875257
   },
   {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860300404
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860300616
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860300828
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860301042
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860301255
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860301483
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860301717
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860301920
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860302133
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860302362
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860302583
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860302795
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860302983
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860303154
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860303316
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860304522
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860304708
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860304871
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860305038
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860305216
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860305395
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860305559
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860305754
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860305942
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860306112
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860306308
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860306479
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860306667
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860306854
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860307042
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860307254
-  },
-  {
-    "user": "anonymous",
-    "confirmed": true,
-    "timestamp": 1746860307433
+    "lat": 25.135474996518905,
+    "lon": 55.438556671142585,
+    "timestamp": 1746861898141
   }
 ]
