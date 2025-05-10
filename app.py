@@ -78,4 +78,5 @@ def get_reports():
     return jsonify(reports)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='192.168.169.183', port=5000, debug=True)
+

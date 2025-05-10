@@ -12,9 +12,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
+window.onload = () => {
+    updateStatus();
+    updateMap();
+};
+
+
 let lastClickedLat = null;
 let lastClickedLon = null;
-
 // Handle map click to report smoke
 map.on('click', function (e) {
     lastClickedLat = e.latlng.lat;
@@ -22,11 +27,12 @@ map.on('click', function (e) {
     submitReport();
 });
 
+map.on('moveend', updateStatus);
 
 function submitReport () {
     const data = {
-        lat: e.latlng.lat,
-        lon: e.latlng.lng,
+        lat: lastClickedLat,
+        lon: lastClickedLon,
         timestamp: Date.now(),
         user_id: user_id
     };
@@ -40,19 +46,32 @@ function submitReport () {
         updateMap();
     });
 
-    alert("Report submitted at: " + e.latlng.lat.toFixed(4) + ", " + e.latlng.lng.toFixed(4));
+    alert("Report submitted at: " + lastClickedLat.toFixed(4) + ", " + lastClickedLon.toFixed(4));
 };
+
 
 
 // Update report status
 function updateStatus() {
-    fetch('/status')
+    fetch('/getReports')
         .then(res => res.json())
-        .then(data => {
+        .then(reports => {
+            const bounds = map.getBounds();
+            const visibleReports = reports.filter(r => 
+                bounds.contains([r.lat, r.lon])
+            );
+
+            const count = visibleReports.length;
+
+            let status = "Unconfirmed";
+            if (count >= 3 && count < 6) status = "Likely Incident";
+            else if (count >= 6) status = "Confirmed";
+
             document.getElementById('statusBox').innerText =
-                `Status: ${data.status} (${data.report_count} reports)`;
+                `Visible Reports: ${count} • Status: ${status}`;
         });
 }
+
 
 // Update map markers
 function updateMap() {
@@ -64,7 +83,21 @@ function updateMap() {
             });
 
             reports.forEach(r => {
-                const marker = L.marker([r.lat, r.lon]).addTo(map);
+                let iconColor = 'gray';
+                if (r.confirmations >= 3 && r.confirmations < 6) 
+                    iconColor = 'orange';
+                else if (r.confirmations >= 6) 
+                    iconColor = 'red';
+                const customIcon = L.icon({
+                    iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${iconColor}.png`,
+                    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+                const marker = L.marker([r.lat, r.lon], { icon: customIcon }).addTo(map);
+
                 const popupContent = `
                 <b>Smoke Report</b><br>
                 Confirmations: ${r.confirmations}<br>
@@ -75,8 +108,6 @@ function updateMap() {
 }
 
 function confirmReport(reportId) {
-    const user_id = "anon-" + Math.floor(Math.random() * 1000);  // Random ID (or device ID)
-
     fetch('/confirm', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -86,6 +117,7 @@ function confirmReport(reportId) {
         updateMap();
     });
 }
+
 
 function deleteReport(reportId) {
     fetch('/delete', {
